@@ -1,7 +1,7 @@
 def substrings(string, dictionary)
   string.split(" ").reduce(Hash.new(0)) do |word_count, word|
     substrings = dictionary.select { |dictionary_word| word.downcase.include?(dictionary_word) }
-    substrings = substrings.reduce(word_count) do |word_count, substring|
+    substrings.reduce(word_count) do |word_count, substring|
       word_count[substring] += 1
       word_count
     end
